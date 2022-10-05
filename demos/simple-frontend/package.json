@@ -1,6 +1,6 @@
 {
   "name": "simple-frontend",
-  "author": "Erik Emmerfors"
+  "author": "Erik Emmerfors",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
