@@ -30,7 +30,7 @@ jobs:
           npm run test
 
       - name: Create test summary
-        uses: /bin
+        uses: ./bin
         with:
           paths: test/results/*.xml
           output: test/results/results.html
@@ -43,6 +43,9 @@ jobs:
 
   publish:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: demos/simple-frontend
     if: github.event_name == 'push'
     needs: build
 
@@ -64,7 +67,7 @@ jobs:
           npm ci
           npm run build
           npm run pack
-          cp action.yml dist/
+          cp action.yml dist/bin
           cp README.md dist/
           cp LICENSE dist/
       - name: Check for changes
