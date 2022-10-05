@@ -24,3 +24,6 @@ jobs:
           node-version: ${{ matrix.node }}
       - run: npm ci
       - run: npm test
+      
+      - name: Post results
+        run: echo '### Hello world! :rocket:' >> $GITHUB_STEP_SUMMARY
