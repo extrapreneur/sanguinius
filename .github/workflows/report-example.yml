@@ -25,7 +25,7 @@ jobs:
 
       - name: Build
         run: |
-          npm ci
+          npm install
           npm run build
           npm run test
       - name: Create test summary
