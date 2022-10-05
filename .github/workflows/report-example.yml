@@ -30,7 +30,7 @@ jobs:
           npm run test
 
       - name: Create test summary
-        uses: ./bin
+        uses: ./
         with:
           paths: test/results/*.xml
           output: test/results/results.html
@@ -67,7 +67,7 @@ jobs:
           npm ci
           npm run build
           npm run pack
-          cp action.yml dist/bin
+          cp action.yml dist/
           cp README.md dist/
           cp LICENSE dist/
       - name: Check for changes
