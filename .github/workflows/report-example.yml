@@ -12,6 +12,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: demos/simple-frontend
     steps:
       - name: Check out source
         uses: actions/checkout@v3
@@ -19,7 +22,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '14'
-          working-directory: 'demos/simple-frontend' 
 
       - name: Build
         run: |
