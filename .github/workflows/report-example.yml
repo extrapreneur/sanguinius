@@ -30,7 +30,7 @@ jobs:
           npm run test
 
       - name: Create test summary
-        uses: ./
+        uses: ./demos/simple-frontend/bin
         with:
           paths: test/results/*.xml
           output: test/results/results.html
