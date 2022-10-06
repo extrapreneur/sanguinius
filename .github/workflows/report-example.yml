@@ -28,12 +28,12 @@ jobs:
           npm ci
           npm run build
           npm run test:ci
-
+          ls -la
+          
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()
-        run: |
-          ls -la
+
         with:
           junit_files: "./tests/junit/results/*.xml"
 
