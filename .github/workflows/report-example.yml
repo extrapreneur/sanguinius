@@ -41,16 +41,13 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: junit-artifact
-          path: tests/*.xml
-        working-directory: demos/simple-frontend
+          path: demos/simple-frontend/tests/*.xml
 
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()
-
         with:
-          junit_files: tests/*.xml
-        working-directory: demos/simple-frontend
+          junit_files: demos/simple-frontend/tests/*.xml
 
       # - name: Post results
       #   run: echo '### Hello world! :rocket:' >> $GITHUB_STEP_SUMMARY
