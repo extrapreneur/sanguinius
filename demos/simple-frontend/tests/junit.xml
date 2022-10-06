@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Sanginius tests" tests="2" failures="0" errors="0" time="0.822">
+  <testsuite name="src/App.test.js" errors="0" failures="0" skipped="0" timestamp="2022-10-06T08:58:13" time="0.453" tests="2">
+    <testcase classname="-renders learn react link" name="-renders learn react link" time="0.031">
+    </testcase>
+    <testcase classname="snapshot test-testing app button" name="snapshot test-testing app button" time="0.008">
+    </testcase>
+  </testsuite>
+</testsuites>

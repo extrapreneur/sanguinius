@@ -18,7 +18,7 @@ permissions:
   issues: read
   checks: write
   pull-requests: write
-  
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -41,14 +41,14 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: junit-artifact
-          path: tests/**/*.xml
+          path: tests/*.xml
 
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()
 
         with:
-          junit_files: tests/**/*.xml
+          junit_files: tests/*.xml
 
       # - name: Post results
       #   run: echo '### Hello world! :rocket:' >> $GITHUB_STEP_SUMMARY
