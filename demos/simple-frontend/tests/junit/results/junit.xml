@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Sanginius tests" tests="1" failures="0" errors="0" time="1.188">
-  <testsuite name="src/App.test.js" errors="0" failures="0" skipped="0" timestamp="2022-10-06T08:04:12" time="0.454" tests="1">
-    <testcase classname="-renders learn react link" name="-renders learn react link" time="0.03">
+<testsuites name="Sanginius tests" tests="1" failures="0" errors="0" time="1.167">
+  <testsuite name="src/App.test.js" errors="0" failures="0" skipped="0" timestamp="2022-10-06T08:15:20" time="0.447" tests="1">
+    <testcase classname="-renders learn react link" name="-renders learn react link" time="0.023">
     </testcase>
   </testsuite>
 </testsuites>
