@@ -42,7 +42,7 @@
   },
   "jest-junit": {
     "suiteName": "Sanginius tests",
-    "outputDirectory": "./tests/junit/results",
+    "outputDirectory": "tests/",
     "outputName": "junit.xml",
     "uniqueOutputName": "false",
     "classNameTemplate": "{classname}-{title}",

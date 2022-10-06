@@ -30,19 +30,19 @@ jobs:
           npm ci
           npm run build
           npm run test:ci
-          ls -la tests/junit/results/
+          ls -la tests/
 
       - uses: actions/upload-artifact@v3
         with:
           name: junit-artifact
-          path: ./tests/junit/results/junit.xml
+          path: tests/**/*.xml
 
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()
 
         with:
-          junit_files: ./tests/junit/results/junit.xml
+          junit_files: tests/**/*.xml
 
       # - name: Post results
       #   run: echo '### Hello world! :rocket:' >> $GITHUB_STEP_SUMMARY
