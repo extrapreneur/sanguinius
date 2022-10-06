@@ -30,6 +30,11 @@ jobs:
           npm run test:ci
           ls -la tests/junit/results/
 
+      - uses: actions/upload-artifact@v3
+        with:
+          name: junit-artifact
+          path: tests/junit/results/junit.xml
+
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()
