@@ -42,6 +42,7 @@ jobs:
         with:
           name: junit-artifact
           path: tests/*.xml
+        working-directory: demos/simple-frontend
 
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2
@@ -49,6 +50,7 @@ jobs:
 
         with:
           junit_files: tests/*.xml
+        working-directory: demos/simple-frontend
 
       # - name: Post results
       #   run: echo '### Hello world! :rocket:' >> $GITHUB_STEP_SUMMARY
