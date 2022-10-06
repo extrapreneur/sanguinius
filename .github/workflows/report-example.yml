@@ -23,17 +23,17 @@ jobs:
         with:
           node-version: '14'
 
-      - name: Beginning Summary 
-        run: echo "# Summary" >> $GITHUB_STEP_SUMMARY
-
       - name: Build
         run: |
           npm ci
           npm run build
-          npm run test
+          npm run test:ci
 
-      - name: Finalizing summary
-        run: echo 'end' >> $GITHUB_STEP_SUMMARY
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        if: always()
+        with:
+          junit_files: "tests/junit/results/**/*.xml"
 
       # - name: Post results
       #   run: echo '### Hello world! :rocket:' >> $GITHUB_STEP_SUMMARY
