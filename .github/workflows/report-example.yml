@@ -9,12 +9,14 @@ on:
 
   workflow_dispatch:
 
+defaults:
+  run:
+    working-directory: demos/simple-frontend
+
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./demos/simple-frontend
+    
     steps:
       - name: Check out source
         uses: actions/checkout@v3
