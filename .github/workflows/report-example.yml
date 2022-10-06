@@ -21,7 +21,10 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '12'
+          node-version: '14'
+
+      - name: Beginning Summary 
+        run: echo "# Summary" >> $GITHUB_STEP_SUMMARY
 
       - name: Build
         run: |
@@ -29,65 +32,8 @@ jobs:
           npm run build
           npm run test
 
-      - name: Create test summary
-        uses: test-summary/action@dist
-        with:
-          paths: results/**/*.xml
-        if: always()
-
-      - name: Upload test summary
-        uses: actions/upload-artifact@v3
-        with:
-          name: test-summary
-          path: test-summary.md
-        if: always()
-
-  publish:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./demos/simple-frontend
-    if: github.event_name == 'push'
-    needs: build
-
-    steps:
-      - name: Check out source
-        uses: actions/checkout@v3
-      - name: Check out distribution branch
-        uses: actions/checkout@v3
-        with:
-          ref: 'dist'
-          path: 'dist'
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '12'
-
-      - name: Build
-        run: |
-          npm ci
-          npm run build
-          npm run pack
-          cp action.yml dist/
-          cp README.md dist/
-          cp LICENSE dist/
-      - name: Check for changes
-        id: status
-        run: |
-          if [ -n "$(git status --porcelain)" ]; then
-            echo "::set-output name=has_changes::1"
-          fi
-        working-directory: dist
-      - name: Publish action
-        run: |
-          git add --verbose .
-          git config user.name 'Erik Emmerfors'
-          git config user.email 'erik.emmerfors@extrapreneur.se'
-          git commit -m 'Update from CI' --allow-empty
-          git push origin dist
-        if: steps.status.outputs.has_changes == '1'
-        working-directory: dist
+      - name: Finalizing summary
+        run: echo 'end' >> $GITHUB_STEP_SUMMARY
 
       # - name: Post results
       #   run: echo '### Hello world! :rocket:' >> $GITHUB_STEP_SUMMARY
