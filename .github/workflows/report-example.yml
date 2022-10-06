@@ -30,10 +30,10 @@ jobs:
           npm run test
 
       - name: Create test summary
-        uses: 'demos/simple-frontend'
+        uses: test-summary/action@dist
         with:
-          paths: test/results/*.xml
-          output: test/results/results.html
+          paths: results/**/*.xml
+        if: always()
 
       - name: Upload test summary
         uses: actions/upload-artifact@v3
