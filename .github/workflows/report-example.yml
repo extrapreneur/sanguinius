@@ -32,8 +32,10 @@ jobs:
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()
+        run: |
+          ls -la
         with:
-          junit_files: "/demos/simple-frontend/tests/junit/results/*.xml"
+          junit_files: "./tests/junit/results/*.xml"
 
       # - name: Post results
       #   run: echo '### Hello world! :rocket:' >> $GITHUB_STEP_SUMMARY
