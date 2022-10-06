@@ -27,7 +27,7 @@ jobs:
         run: |
           npm ci
           npm run build
-          npm run test:ci
+          npm run test -- --coverage --ci --testResultsProcessor=\"jest-junit\" --watchAll=false
 
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2
