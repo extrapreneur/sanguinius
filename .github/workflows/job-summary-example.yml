@@ -30,7 +30,7 @@ jobs:
 
       - name: List dir
         run: | 
-          ls -lah
+          ls -lah tests
 
       - name: Run a multi-line script
         run: |
