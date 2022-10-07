@@ -28,15 +28,15 @@ jobs:
           npm run build
           npm run test 2>&1 | tee tests/log.txt
 
-      - name: List dir
-        run: | 
-          ls -lah tests
+  #    - name: List dir
+  #      run: | 
+  #        ls -lah tests
 
-      - name: Run a multi-line script
-        run: |
-          echo tests/log.txt
-          cat tests/log.txt
-          less tests/log.txt
+  #    - name: Run a multi-line script
+  #      run: |
+  #        echo tests/log.txt
+  #        cat tests/log.txt
+  #       less tests/log.txt
           
       - name: Creating job summary
         run: |
