@@ -34,9 +34,10 @@ jobs:
         continue-on-error: true
 
       - name: Copy test execution videos
+        working-directory: demos/simple-frontend
         run: |
-          mkdir demos/simple-frontend/public/videos
-          cp -r demos/simple-frontend/cypress/videos demos/simple-frontend/public/videos
+          mkdir public/videos
+          cp -r cypress/videos public/videos
 
       - name: Merge test results into one
         run: npm run report:merge
