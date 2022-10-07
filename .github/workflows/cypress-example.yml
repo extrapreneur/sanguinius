@@ -43,7 +43,7 @@ jobs:
         with:
           name: e3e-tests-artifact
           if-no-files-found: error
-          path: demos/simple-frontend/cypress/videos/*.xml
+          path: demos/simple-frontend/cypress/videos/*.mp4
 
       - name: Merge test results into one
         run: npm run report:merge
