@@ -1,6 +1,7 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+  projectId: "naouu8",
   videos: true,
   reporter: "cypress-multi-reporters",
   reporterOptions: {
