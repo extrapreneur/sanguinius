@@ -26,7 +26,7 @@ jobs:
         run: |
           npm ci
           npm run build
-          npm run test >> tests/log.txt
+          npm run test 2>&1 | tee tests/log.txt
 
       - name: List dir
         run: | 
@@ -34,8 +34,9 @@ jobs:
 
       - name: Run a multi-line script
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          echo tests/log.txt
+          cat tests/log.txt
+          less tests/log.txt
           
       - name: Creating job summary
         run: |
