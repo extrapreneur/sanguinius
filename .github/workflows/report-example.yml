@@ -2,11 +2,6 @@ name: Report example, display summaries in actions
 
 on:
 
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
   workflow_dispatch:
 
 defaults:
