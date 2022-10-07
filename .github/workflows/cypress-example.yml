@@ -7,6 +7,7 @@ on:
     
   workflow_dispatch:
   
+  
 defaults:
   run:
     working-directory: demos/simple-frontend
@@ -21,10 +22,17 @@ jobs:
         with:
           node-version: '14'
 
-      - uses: cypress-io/github-action@v4
-        with:
-          browser: chrome
+      - name: Build
+        run: |
+          npm ci
+          $(npm bin)/cypress cache path
+          $(npm bin)/cypress cache list
+          $(npm bin)/cypress verify
 
+      - name: Run Cypress tests
+        run: npm run test:chrome
+        continue-on-error: true
+        
       - name: Copy test execution videos
         run: |
           mkdir public
