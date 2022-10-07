@@ -37,5 +37,8 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
           
-      - name: Adding markdown
-        run: echo '### Hello world! :rocket:' >> $GITHUB_STEP_SUMMARY
+      - name: Creating job summary
+        run: |
+          echo "### Tests summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY # this is a blank line
+          echo tests/log.txt >> $GITHUB_STEP_SUMMARY
